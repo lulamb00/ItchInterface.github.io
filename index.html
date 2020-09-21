@@ -1,1 +1,129 @@
-<h1> Hello World </h1>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>가려움 분석</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="#trend">트렌드</a></li>
+          <li><a data-toggle="tab" href="#precise">상세 분석</a></li>
+        </ul>
+        <br>
+        
+        <div class="tab-content">
+          <div id="trend" class="tab-pane fade in active">
+            <h3> 가려움 트렌드 분석 결과 </h3>
+            <h3> 2020년 8월</h3>
+            <hr>
+            <p> 긁은 시간 변화 (초) </p>
+            <div class = "panel panel-default">
+                <div class="panel-body">
+                    <p> 평소보다 컨디션이 좋아지셨나요? </p>
+                    <p> 최근 일주일 가려움이 꾸준히 감소하고 있어요. </p>
+                </div>
+            </div>
+
+            <div class="container justify-content-center" style="width:75%">
+                <canvas id="scratch_line_chart"></canvas>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+            <script>
+                var config = {
+                type: 'line',
+                data: {
+                    datasets: [{
+                    data: [300,320,270,250,200,190,190,200,150,130,100],
+                    backgroundColor: [
+                        '#696969', '#808080', '#A9A9A9', '#C0C0C0', '#D3D3D3'
+                    ],
+                    label: '긁은 시간'
+                    }],
+                    labels: [1,2,3,4,5,6,7,8,9,10,11]
+                },
+                options: {
+                    responsive: true
+                }
+                };
+
+                window.onload = function() {
+                var ctx = document.getElementById('scratch_line_chart').getContext('2d');
+                window.myPie = new Chart(ctx, config);
+                };
+
+            </script>
+          </div>
+          <div id="precise" class="tab-pane fade">
+            <br>
+            <div class="month">
+            <ul>
+                <li class="prev">&#10094;</li>
+                <li class="next">&#10095;</li>
+                <li>8월<br><span style="font-size:18px">2020</span></li>
+            </ul>
+            </div>
+
+            <ul class="weekdays">
+            <li>Mo</li>
+            <li>Tu</li>
+            <li>We</li>
+            <li>Th</li>
+            <li>Fr</li>
+            <li>Sa</li>
+            <li>Su</li>
+            </ul>
+
+            <ul class="days">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li><span class="active"><a href="result.html"> 1 </a></span></li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+                <li>25</li>
+                <li>26</li>
+                <li>27</li>
+                <li>28</li>
+                <li>29</li>
+                <li>30</li>
+                <li>31</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>

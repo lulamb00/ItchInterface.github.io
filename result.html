@@ -1,0 +1,113 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="precise.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>가려움 분석</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row ">
+        <br>
+        
+        <h3> 가려움 상세 분석 결과</h3>
+        <h3> 8월 1일 일요일 </h3>
+        <hr>
+        <h4>① 시간대별 분석 </h4>
+        <div class = "panel panel-default">
+            <div class="panel-body">
+                <p>수면 후 1 시간 이내 가려움이 가장 심합니다.</p>
+                <p>불면증이 심해지면 의사와 상담해보세요. </p>
+            </div>
+        </div>
+        <div class = "media">
+            <div class="media-left media-middle">
+                <canvas id="scratch_angle_chart"></canvas>
+            </div>
+            <div class = "media-body">
+                <br>
+                <br>
+                <br>
+                <br>
+                <h4> 오래 긁은 시간 <h4>
+                <h4> 85 초 </h4>
+                <hr>
+                <h4> 총 긁은 시간 <h4>
+                <h4> 624 초 </h4>
+                <br>
+                <br>
+                <br>
+                <br>    
+            </div>
+        </div>
+        <h4>② 부위별 요약 </h4>
+        <div class = "panel panel-default">
+            <div class="panel-body">
+                <p>수면 후 1 시간 이내 가려움이 가장 심합니다.</p>
+                <p>불면증이 심해지면 의사와 상담해보세요. </p>
+            </div>
+        </div>
+
+        <div class="media">
+            <div class="media-left media-middle">
+                <img src="body_outline.png" alt="human body" class="media-object">
+            </div>
+            <div class="media-body">
+            <br>
+                <h4 class="media-heading">부위 별 긁은 시간 </h4>
+                <hr>
+                <p> 머리, 목 : 7 초 </p>
+                <hr>
+                <p>팔: 36 초 </p>
+                <hr>
+                <p>몸통: 320 초 </p>
+                <hr>
+                <p>다리: 215 초 </p>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+        <script>
+
+            var config = {
+              type: 'polarArea',
+              data: {
+                datasets: [{
+                  data: [60, 50, 48, 45, 25, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0, 0, 0, 1, 2,
+                0, 15, 60, 70],
+                  backgroundColor: [
+                    '#9c004a', '#9c0000', '#9c2000', '#C0C0C0', '#D3D3D3',
+                    '#9c104a', '#9c1000', '#A919A9', '#C010C0', '#D333D3',
+                    '#9c204a', '#9c2000', '#A929A9', '#C020C0', '#D323D3',
+                    '#9c204a', '#9c2000', '#A929A9', '#C020C0', '#D323D3',
+                    '#9c204a', '#9c2000', '#A929A9', '#A929A9',
+                  ],
+                }],
+                labels: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
+                         11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+                         21, 22, 23]
+              },
+              options: {
+                legend: {
+                    display: false
+                },
+                responsive: true
+              }
+            };
+
+            window.onload = function() {
+              var ctx = document.getElementById('scratch_angle_chart').getContext('2d');
+              window.myPie = new Chart(ctx, config);
+            };
+
+        </script>
+
+      </div>
+    </div>
+  </body>
+</html>
