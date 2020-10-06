@@ -4,3 +4,14 @@
     margin-right: auto;
     width: 15%;
   }
+  body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: url("analysis.jpg") center / cover;
+    
+
+  }
